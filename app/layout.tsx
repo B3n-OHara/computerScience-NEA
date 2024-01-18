@@ -18,29 +18,19 @@ const Header: React.FC<HeaderProps> = () => {
       <nav>
         <ul>
           <li>
-            <Link href="/">
-              Home
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/docs">
-              Docs
-            </Link>
+            <Link href="/docs">Docs</Link>
           </li>
           <li>
-            <Link href="/community">
-              Community
-            </Link>
+            <Link href="/community">Community</Link>
           </li>
           <li>
-            <Link href="/contact">
-              Contact
-            </Link>
+            <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/dashboard">
-              Dashboard
-            </Link>
+            <Link href="/dashboard">Dashboard</Link>
           </li>
         </ul>
       </nav>
