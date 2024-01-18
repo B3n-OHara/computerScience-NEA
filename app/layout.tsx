@@ -19,27 +19,27 @@ const Header: React.FC<HeaderProps> = () => {
         <ul>
           <li>
             <Link href="/">
-              <a>Home</a>
+              Home
             </Link>
           </li>
           <li>
             <Link href="/docs">
-              <a>Docs</a>
+              Docs
             </Link>
           </li>
           <li>
             <Link href="/community">
-              <a>Community</a>
+              Community
             </Link>
           </li>
           <li>
             <Link href="/contact">
-              <a>Contact</a>
+              Contact
             </Link>
           </li>
           <li>
             <Link href="/dashboard">
-              <a>Dashboard</a>
+              Dashboard
             </Link>
           </li>
         </ul>
