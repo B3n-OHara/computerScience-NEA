@@ -10,35 +10,6 @@ export const metadata: Metadata = {
   description: 'The Teaching & Learning Platform For Containerisation',
 }
 
-type HeaderProps = {};
-
-const Header: React.FC<HeaderProps> = () => {
-  return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/docs">Docs</Link>
-          </li>
-          <li>
-            <Link href="/community">Community</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link href="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
-
-
 export default function RootLayout({
   children,
 }: {
@@ -46,8 +17,30 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Header />
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/docs">Docs</Link>
+              </li>
+              <li>
+                <Link href="/community">Community</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+              <li>
+                <Link href="/dashboard">Dashboard</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </body>
     </html>
   )
 }
