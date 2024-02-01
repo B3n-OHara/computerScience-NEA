@@ -1,4 +1,4 @@
-import { login, signup } from './actions'
+import { login, signup } from '../actions'
 import { SignInWithGithub, SignInWithGoogle } from '@/utils/supabase/OAuthSignIn'
 import Link from 'next/link'
 import Image from 'next/image'
