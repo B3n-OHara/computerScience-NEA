@@ -1,4 +1,4 @@
-import { login, signup } from '../actions'
+import { login } from '../actions'
 import { SignInWithGithub, SignInWithGoogle } from '@/utils/supabase/OAuthSignIn'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,12 +9,20 @@ export default function LoginPage() {
     return (
         <div>
             <form>
-                <label htmlFor="email">Email:</label>
-                <input id="email" name="email" type="email" />
-                <label htmlFor="password">Password:</label>
-                <input id="password" name="password" type="password" />
-                <button formAction={login}>Sign In</button>
-                <p>Forgotten Your Username or Password?</p>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input id="email" name="email" type="email" />
+                </div>
+                <div>
+                    <label htmlFor="password">Password:</label>
+                    <input id="password" name="password" type="password" />
+                </div>
+                <div>
+                    <button formAction={login}>Sign In</button>
+                </div>
+                <div>
+                    <Link href="../(recoverAcc)">Forgotten Your Password?</Link>
+                </div>
                 <div>
                     <button formAction={SignInWithGithub}>Login With Github</button>
                     <Image
@@ -33,7 +41,12 @@ export default function LoginPage() {
                         alt='Google Icon'
                     />
                 </div>
-                
+                <div>
+                    <p>Or...</p>
+                </div>
+                <div>
+                    <Link href="../(signup)">Sign Up</Link>
+                </div>
             </form>
         </div>
     )
