@@ -43,7 +43,13 @@ export default function Home() {
                 </p>
                 <p>If that all sounds like something you can get behind,</p>
 
-                <Link href={"./auth/(signup)"}>Get Started</Link>
+                <Link href={"./auth/(signup)"}>Get Started</Link>  
+
+                <p>
+                    ContaineriseIt is a project built for the AQA A Level Computer Science Non-Exam Assessment (NEA). 
+                    The NEA is designed to test not only student's coding skills, but also that of their documentation abilities.
+                    If you find any broken features or other bugs, please write a short summary of the issue in the contact page's form. <Link href={"./contact"}>Contact</Link>
+                </p>
             </div>
         </div>
     )
