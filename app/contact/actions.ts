@@ -15,5 +15,5 @@ export async function SubmitContactForm(formData:FormData) {
         message: formData.get('message') as string,
     }
 
-    
+    //! need to send data off to supabase db + revalidate + redirect
 }
