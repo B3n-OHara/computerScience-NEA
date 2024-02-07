@@ -56,3 +56,5 @@ export default function LoginPage() {
         </div>
     )
 }
+
+//! NEED TO STYLE REST - REFER TO DAISY UI DOCS + TAILWIND DOCS
