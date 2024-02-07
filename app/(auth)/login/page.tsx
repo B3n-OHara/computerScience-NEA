@@ -8,14 +8,16 @@ import googleIcon from '@/public/devicon--google.svg'
 export default function LoginPage() {
     return (
         <div>
-            <form className='absolute w-1/3 h-[800px] left-1/3 top-[140px] bg-01dp shadow-[0px_16px_6px_rgba(244, 144, 29, 0.03)]'>
+            <form className='absolute w-1/3 h-[700px] left-1/3 top-[140px] bg-01dp shadow-[0px_16px_6px_rgba(244,144,29,0.03)] shadow-[0px_9px_5px_rgba(244,144,29,0.1)] shadow-[0px_4px_4px_rgba(244,144,29,0.17)] shadow-[0px_1px_2px_rgba(244,144,29,0.2)] rounded-[20px]'>
                 <div className='flex flex-col'>
                     <div className='flex flex-col'>
-                        <label htmlFor="email">Email:</label>
-                        <input id="email" name="email" type="email" placeholder='name@email.com' />
+                        <div className='label'>
+                            <span className='label-text'>Email:</span>
+                        </div>
+                        <input id="email" name="email" type="email" placeholder='name@email.com' className='input input-bordered input-lg '/>
                     </div>
                     <div className='flex flex-col'>
-                        <label htmlFor="password">Password:</label>
+                        <label htmlFor="password" className='label-text'>Password:</label>
                         <input id="password" name="password" type="password" placeholder='Password'/>
                     </div>
                 </div>
