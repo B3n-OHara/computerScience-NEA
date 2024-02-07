@@ -13,6 +13,18 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'surface': '#121212',
+        '01dp': '#1d1d1d',
+        '02dp': '#212121',
+        '03dp': '#242424',
+        '04dp': '#272727',
+        '06dp': '#2c2c2c',
+        '08dp': '#2d2d2d',
+        '12dp': '#323232',
+        '16dp': '#353535',
+        '24dp': '#383838',
+      }
     },
   },
   daisyui: {
@@ -27,7 +39,7 @@ const config: Config = {
           "info": "#ffffff",
           "success": "#4bb543",
           "warning": "#ffcc00",
-            "error": "#cc0000",
+          "error": "#cc0000",
         },
       },
     ],
