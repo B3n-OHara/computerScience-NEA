@@ -9,43 +9,37 @@ export default function LoginPage() {
     return (
         <div>
             <form>
-                <div className='inputs-container'>
+                <div>
                     <div>
                         <label htmlFor="email">Email:</label>
-                        <input id="email" name="email" type="email" />
+                        <input id="email" name="email" type="email" placeholder='name@email.com' />
                     </div>
                     <div>
                         <label htmlFor="password">Password:</label>
-                        <input id="password" name="password" type="password" />
+                        <input id="password" name="password" type="password" placeholder='Password'/>
                     </div>
                 </div>
 
-                <div className='button'>
-                    <button formAction={login}>Sign In</button>
+                <div>
+                    <button className='btn btn-wide' formAction={login}>Sign In</button>
                 </div>
 
-                <div className='link'>
+                <div>
                     <Link href="../(recoverAcc)">Forgotten Your Password?</Link>
                 </div>
 
                 <div className='socialProviders-container'>
                     <div className='button'>
-                        <button formAction={SignInWithGithub}>Login With Github</button>
-                        <Image
-                            src={githubIcon}
-                            width={60}
-                            height={60}
-                            alt='Github Icon'
-                        />
+                        <button className='btn' formAction={SignInWithGithub}>
+                            Login With Github
+                            <Image src={githubIcon} width={60} height={60} alt='Github Icon'/>
+                        </button>
                     </div>
-                    <div className='button'>
-                        <button formAction={SignInWithGoogle}>Login With Google</button>
-                        <Image
-                            src={googleIcon}
-                            width={60}
-                            height={60}
-                            alt='Google Icon'
-                        />
+                    <div>
+                        <button className='btn' formAction={SignInWithGoogle}>
+                            Login With Google
+                            <Image src={googleIcon} width={60} height={60} alt='Google Icon'/>
+                        </button>
                     </div>
                 </div>
                 
@@ -53,7 +47,7 @@ export default function LoginPage() {
                     <p>Or...</p>
                 </div>
 
-                <div className='link'>
+                <div>
                     <Link href="../(signup)">Sign Up</Link>
                 </div>
             </form>
