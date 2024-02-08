@@ -8,22 +8,24 @@ import googleIcon from '@/public/devicon--google.svg'
 export default function LoginPage() {
     return (
         <div>
-            <form className='absolute w-1/3 h-[700px] left-1/3 top-[140px] bg-01dp shadow-[0px_16px_6px_rgba(244,144,29,0.03)] shadow-[0px_9px_5px_rgba(244,144,29,0.1)] shadow-[0px_4px_4px_rgba(244,144,29,0.17)] shadow-[0px_1px_2px_rgba(244,144,29,0.2)] rounded-[20px]'>
-                <div className='flex flex-col'>
+            <form className='flex flex-col justify-around absolute w-1/3 h-[700px] left-1/3 top-[140px] bg-01dp shadow-[0px_16px_6px_rgba(244,144,29,0.03)] shadow-[0px_9px_5px_rgba(244,144,29,0.1)] shadow-[0px_4px_4px_rgba(244,144,29,0.17)] shadow-[0px_1px_2px_rgba(244,144,29,0.2)] rounded-[20px]'>
+                <div className='flex flex-col gap-y-5'>
                     <div className='flex flex-col'>
                         <div className='label'>
                             <span className='label-text'>Email:</span>
                         </div>
-                        <input id="email" name="email" type="email" placeholder='name@email.com' className='input input-bordered input-lg '/>
+                        <input id="email" name="email" type="email" placeholder='name@email.com' className='input input-bordered input-lg left-[40px] top-[60px] w-[560px]'/>
                     </div>
                     <div className='flex flex-col'>
-                        <label htmlFor="password" className='label-text'>Password:</label>
-                        <input id="password" name="password" type="password" placeholder='Password'/>
+                        <div className='label'>
+                            <span className='label-text'>Passsword:</span>
+                        </div>
+                        <input id="password" name="password" type="password" placeholder='Password'className='input input-bordered input-lg left-[40px] top-[60px] w-[560px]'/>
                     </div>
                 </div>
 
-                <div>
-                    <button className='btn btn-wide' formAction={login}>Sign In</button>
+                <div className='flex'>
+                    <button className='btn btn-lg shrink w-[374px]' formAction={login}>Sign In</button>
                 </div>
 
                 <div>
