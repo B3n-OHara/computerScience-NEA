@@ -1,11 +1,31 @@
 import type { Metadata } from 'next'
 import Link from 'next/link';
-import { Inter } from 'next/font/google'
+import { Rubik, Source_Code_Pro, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import Image from 'next/image';
 import profileIcon from '@/public/healthicons--ui-user-profile.svg'
 
-const inter = Inter({ subsets: ['latin'] })
+const rubik = Rubik({
+  subsets: ['latin'],
+  weight: '600',
+  display: 'swap',
+  variable: '--font-rubik',
+})
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  weight: '500',
+  style: 'italic',
+  display: 'swap',
+  variable: '--font-source-code-pro',
+})
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  weight: '300',
+  display: 'swap',
+  variable: '--font-roboto-mono',
+})
 
 export const metadata: Metadata = {
   title: 'ContaineriseIt',
@@ -19,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${rubik.variable} ${sourceCodePro.variable} ${robotoMono.variable}`}>
         <header>
           <nav>
             <ul>

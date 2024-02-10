@@ -11,7 +11,12 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      fontFamily: {
+        'titles': ['var(--font-rubik)'],
+        'subheadings': ['var(--font-source-code-pro)'],
+        'text': ['var(--font-roboto-mono']
       },
       colors: {
         'surface': '#121212',
