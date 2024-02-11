@@ -41,11 +41,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${rubik.variable} ${sourceCodePro.variable} ${robotoMono.variable}`}>
         <header>
-          <nav className='font-text'>
-            <ul className='flex flex-row justify-end items-center gap-x-20'>
-              <li>
-                <Link href="/contact">Contact</Link>
+          <nav className='font-text w-full h-[90px] flex flex-row'>
+            <ul className='flex flex-row justify-start items-center basis-1/6'>
+              <li className='pl-8'>
+                <button className='btn btn-outline btn-primary'>
+                  <Link href="/contact">Contact</Link>
+                </button>
               </li>
+            </ul>
+            
+            <ul className='flex flex-row justify-end items-center basis-5/6 gap-x-20 pr-2'>
               <li>
                 <Link href="/">Home</Link>
               </li>
