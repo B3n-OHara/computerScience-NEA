@@ -7,21 +7,20 @@ export default function DashboardLayout({
 }) {
     return(
         <section>
-            <div className="drawer">
+            <div className="drawer drawer-open">
                 <input id="drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
                     {children}
-                    <label htmlFor="drawer" className="btn btn-primary drawer-button">Open Drawer</label>
                 </div>
 
                 <div className="drawer-side">
                     <label htmlFor="drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-16dp text-base-content">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                        <li>Item 5</li>
+                    <ul className="menu p-4 w-60 min-h-full bg-24dp text-base-content items-center">
+                        <li className="basis-1/5"><Link href={"/dashboard/workspace"}>Workspace</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/5"><Link href={"/dashboard/userContainers"}>Your Containers</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/5"><Link href={"/dashboard/demos"}>Demos</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/5"><Link href={"/dashboard/marketplace"}>Container Marketplace</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/5"><Link href={"/docs"}>How-To Guides</Link><div className="divider divider-primary"></div></li>
                     </ul>
                 </div>
             </div>
