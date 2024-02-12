@@ -64,12 +64,15 @@ export default function RootLayout({
                 <Link href="/dashboard">Dashboard</Link>
               </li>
               <li>
-                <Image 
-                  src={profileIcon}
-                  width={64}
-                  height={64}
-                  alt='Profile Icon'
-                />
+                <Link href={"/login"}>
+                  <Image 
+                    src={profileIcon}
+                    width={64}
+                    height={64}
+                    alt='Profile Icon'
+                  />
+                </Link>
+                
               </li>
             </ul>
           </nav>
