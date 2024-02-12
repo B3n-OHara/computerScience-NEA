@@ -2,8 +2,12 @@ import Link from "next/link"
 
 export default function DashboardLayout({
     children,
+    guest,
+    loggedIn,
 }: {
     children: React.ReactNode
+    guest: React.ReactNode
+    loggedIn: React.ReactNode
 }) {
     return(
         <section>
@@ -11,6 +15,8 @@ export default function DashboardLayout({
                 <input id="drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
                     {children}
+                    {guest}
+                    {loggedIn}
                 </div>
 
                 <div className="drawer-side">
@@ -24,7 +30,6 @@ export default function DashboardLayout({
                     </ul>
                 </div>
             </div>
-            
         </section>
     )
 }

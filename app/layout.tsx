@@ -72,7 +72,6 @@ export default function RootLayout({
                     alt='Profile Icon'
                   />
                 </Link>
-                
               </li>
             </ul>
           </nav>
