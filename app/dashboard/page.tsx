@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function UserDashboard() {
     return(
         <div>
-            <h1>Test</h1>
+            <h1>Please Ensure You are Logged In To Access Dashboard Features</h1>
         </div>
     )
 }
