@@ -9,6 +9,8 @@ export default function DashboardLayout({
     guest: React.ReactNode
     loggedIn: React.ReactNode
 }) {
+
+    
     return(
         <section>
             <div className="drawer drawer-open">
