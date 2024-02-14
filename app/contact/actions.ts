@@ -14,13 +14,22 @@ export async function SubmitContactForm(formData:FormData) {
     const message = formData.get('message') as string
 
     const { data: { user } } = await supabase.auth.getUser()
+    const userID = user?.id
 
-    const { error } = await supabase
-        .from('ContactFormMessages')
-        .insert({ userID: (user), message_type: (messageType), message: (message) })
+    if (user == null) {
+        const { error } = await supabase
+            .from('ContactFormMessages')
+            .insert({ userID: ('Guest'), message_type: (messageType), message: (message) })
+    }
 
-    if (error) {
-        redirect('./error')
+    else {
+        const { error } = await supabase
+            .from('ContactFormMessages')
+            .insert({ userID: (userID), message_type: (messageType), message: (message) })
+
+        if (error) {
+            redirect('./error')
+        }    
     }
 
     revalidatePath('/', 'layout')
