@@ -1,14 +1,15 @@
 import Link from "next/link"
+import CheckUserLoggedIn from "@/utils/supabase/checkUserLoggedIn"
 
-export default function DashboardLayout({
-    children,
+export default async function DashboardLayout({
     guest,
     loggedIn,
 }: {
-    children: React.ReactNode
     guest: React.ReactNode
     loggedIn: React.ReactNode
 }) {
+
+    const state = await CheckUserLoggedIn()
 
     
     return(
@@ -16,9 +17,8 @@ export default function DashboardLayout({
             <div className="drawer drawer-open">
                 <input id="drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
-                    {children}
-                    {guest}
-                    {loggedIn}
+                    
+                    {state ? loggedIn : guest}
                 </div>
 
                 <div className="drawer-side">
