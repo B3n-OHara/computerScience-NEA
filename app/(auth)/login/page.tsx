@@ -53,7 +53,7 @@ export default function LoginPage() {
                 </div>
 
                 <div>
-                    <Link href="../(signup)">Sign Up</Link>
+                    <Link href="./signup">Sign Up</Link>
                 </div>
             </form>
         </div>

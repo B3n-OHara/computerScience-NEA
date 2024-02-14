@@ -53,7 +53,7 @@ export default function SignPage() {
                 </div>
 
                 <div>
-                    <Link href="../(login)">Login</Link>
+                    <Link href="./login">Login</Link>
                 </div>
             </form>
         </div>
