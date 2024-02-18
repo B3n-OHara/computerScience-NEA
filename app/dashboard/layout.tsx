@@ -24,11 +24,12 @@ export default async function DashboardLayout({
                 <div className="drawer-side">
                     <label htmlFor="drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-60 min-h-full bg-24dp text-base-content items-center">
-                        <li className="basis-1/5"><Link href={"/dashboard/workspace"}>Workspace</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/5"><Link href={"/dashboard/userContainers"}>Your Containers</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/5"><Link href={"/dashboard/demos"}>Demos</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/5"><Link href={"/dashboard/marketplace"}>Container Marketplace</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/5"><Link href={"/docs"}>How-To Guides</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/6"><Link href={"/dashboard/workspace"}>Workspace</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/6"><Link href={"/dashboard/userContainers"}>Your Containers</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/6"><Link href={"/dashboard/demos"}>Demos</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/6"><Link href={"/dashboard/marketplace"}>Container Marketplace</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/6"><Link href={"/docs"}>How-To Guides</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/6"><Link href={"/dashboard/account"}>Account Settings</Link></li>
                     </ul>
                 </div>
             </div>

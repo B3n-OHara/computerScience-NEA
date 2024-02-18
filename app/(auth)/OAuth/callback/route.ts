@@ -1,6 +1,5 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
-import { type CookieOptions, createServerClient } from '@supabase/ssr'
 
 import { createClient } from '@/utils/supabase/actions'
 

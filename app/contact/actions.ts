@@ -18,14 +18,14 @@ export async function SubmitContactForm(formData:FormData) {
 
     if (user == null) {
         const { error } = await supabase
-            .from('ContactFormMessages')
-            .insert({ userID: ('Guest'), message_type: (messageType), message: (message) })
+            .from('contact_form_messages')
+            .insert({ message_type: (messageType), message: (message), guest: (true) })
     }
 
     else {
         const { error } = await supabase
-            .from('ContactFormMessages')
-            .insert({ userID: (userID), message_type: (messageType), message: (message) })
+            .from('contact_form_messages')
+            .insert({ message_type: (messageType), message: (message), guest: (false), user_id: (userID) })
 
         if (error) {
             redirect('./error')

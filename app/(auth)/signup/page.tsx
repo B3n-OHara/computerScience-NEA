@@ -8,7 +8,7 @@ import googleIcon from '@/public/devicon--google.svg'
 export default function SignPage() {
     return (
         <div>
-            <form className='flex flex-col justify-evenly items-center absolute w-1/3 flex-initial h-[640px] left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>
+            <form className='flex flex-col justify-evenly items-center absolute w-1/3 min-w-64 flex-initial h-[640px] left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>
                 <div className='flex flex-col flex-initial gap-y-5 items-center'>
                     <div className='flex flex-col'>
                         <div className='label'>
@@ -34,15 +34,15 @@ export default function SignPage() {
 
                 <div className='flex flex-initial gap-x-3'>
                     <div>
-                        <button className='btn btn-lg' formAction={SignInWithGithub}>
-                            Login With Github
+                        <button className='btn btn-lg' onClick={SignInWithGithub}>
+                            Sign Up With Github
                             <Image src={githubIcon} width={60} height={60} alt='Github Icon'/>
                         </button>
                     </div>
                     
                     <div>
-                        <button className='btn btn-lg' formAction={SignInWithGoogle}>
-                            Login With Google
+                        <button className='btn btn-lg' onClick={SignInWithGoogle}>
+                            Sign Up With Google
                             <Image src={googleIcon} width={60} height={60} alt='Google Icon'/>
                         </button>
                     </div>
