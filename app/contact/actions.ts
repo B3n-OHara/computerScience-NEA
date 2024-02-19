@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
-import { createClient } from '@/utils/supabase/actions'
+import { createClient } from '@/utils/supabase/OAuthActions'
 
 export async function SubmitContactForm(formData:FormData) {
     const cookieStore = cookies()
