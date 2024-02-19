@@ -1,6 +1,6 @@
 'use server'
 
-import { createClient } from "@/utils/supabase/actions"
+import { createClient } from "@/utils/supabase/server"
 import { cookies } from "next/headers"
 
 const cookieStore = cookies()
