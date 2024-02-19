@@ -1,6 +1,8 @@
+'use server'
+
 import { RequestPwdReset } from "@/utils/supabase/pwdReset"
 
-export default function RecoverAcc() {
+export default async function RecoverAcc() {
     return (
         <div>
             <form>

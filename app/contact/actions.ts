@@ -10,7 +10,7 @@ export async function SubmitContactForm(formData:FormData) {
     const cookieStore = cookies()
     const supabase = await createClient(cookieStore)
 
-    const messageType = formData.get('messageType') as string
+    const messageType = formData.get('contactReason') as string
     const message = formData.get('message') as string
 
     const { data: { user } } = await supabase.auth.getUser()
@@ -20,6 +20,10 @@ export async function SubmitContactForm(formData:FormData) {
         const { error } = await supabase
             .from('contact_form_messages')
             .insert({ message_type: (messageType), message: (message), guest: (true) })
+        
+        if (error) {
+            redirect('./error')
+        }
     }
 
     else {

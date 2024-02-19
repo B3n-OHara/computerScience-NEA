@@ -67,6 +67,7 @@ export default function RootLayout({
                 <Link href={"/login"}>
                   <Image 
                     src={profileIcon}
+                    priority={true}
                     width={64}
                     height={64}
                     alt='Profile Icon'

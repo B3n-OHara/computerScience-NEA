@@ -1,5 +1,6 @@
 import Link from "next/link"
 import CheckUserLoggedIn from "@/utils/supabase/checkUserLoggedIn"
+import signOut from "@/utils/supabase/userSignOut"
 
 export default async function DashboardLayout({
     guest,

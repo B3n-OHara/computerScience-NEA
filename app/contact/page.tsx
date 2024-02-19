@@ -1,6 +1,6 @@
 import { SubmitContactForm } from "./actions"
 
-export default function contact() {
+export default async function Contact() {
     return(
         <div>
             <form className='flex flex-col justify-around items-center absolute w-1/3 min-w-64 flex-wrap flex-initial h-[640px] left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>
@@ -9,7 +9,6 @@ export default function contact() {
                         <span className="label-text">Reason For Contact:</span>
                     </div>
                     <select id="contactReason" name="contactReason" className="select select-bordered">
-                        <option disabled selected>Select One</option>
                         <option value={'Bug'}>Bug</option>
                         <option value={'Feedback'}>Feedback</option>
                         <option value={'Other'}>Other</option>

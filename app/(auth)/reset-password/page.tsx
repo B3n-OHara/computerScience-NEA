@@ -1,6 +1,8 @@
+'use server'
+
 import { UpdateUserPwd } from "@/utils/supabase/pwdReset"
 
-export default function ResetPassword() {
+export default async function ResetPassword() {
     return (
         <div>
             <form>

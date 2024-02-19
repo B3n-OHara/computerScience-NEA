@@ -1,3 +1,5 @@
+'use server'
+
 import { login } from '../actions'
 import { SignInWithGithub, SignInWithGoogle } from '@/utils/supabase/OAuthSignIn'
 import Link from 'next/link'
@@ -5,10 +7,10 @@ import Image from 'next/image'
 import githubIcon from '@/public/mdi--github.svg'
 import googleIcon from '@/public/devicon--google.svg'
 
-export default function LoginPage() {
+export default async function LoginPage() {
     return (
         <div>
-            <form className='font-text flex flex-col justify-evenly items-center absolute w-1/3 min-w-64 flex-initial h-[640px] left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>
+            <form className='font-text flex flex-col justify-evenly items-center absolute w-1/3 min-w-64 flex-initial h-3/4 left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>
                 <div className='flex flex-col flex-initial gap-y-5 items-center'>
                     <div className='flex flex-col'>
                         <div className='label'>
@@ -34,14 +36,14 @@ export default function LoginPage() {
 
                 <div className='flex flex-initial gap-x-3'>
                     <div>
-                        <button className='btn btn-lg' onClick={SignInWithGithub}>
+                        <button className='btn btn-lg btn-disabled' onClick={SignInWithGithub}>
                             Login With Github
                             <Image src={githubIcon} width={60} height={60} alt='Github Icon'/>
                         </button>
                     </div>
                     
                     <div>
-                        <button className='btn btn-lg' onClick={SignInWithGoogle}>
+                        <button className='btn btn-lg btn-disabled' onClick={SignInWithGoogle}>
                             Login With Google
                             <Image src={googleIcon} width={60} height={60} alt='Google Icon'/>
                         </button>
