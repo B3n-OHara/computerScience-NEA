@@ -3,10 +3,9 @@
 import { createClient } from "@/utils/supabase/server"
 import { cookies } from "next/headers"
 
-const cookieStore = cookies()
-const supabase = createClient(cookieStore)
-
 export default async function CheckUserLoggedIn() {
+    const cookieStore = cookies()
+    const supabase = await createClient(cookieStore)
     const { data: { user } } = await supabase.auth.getUser()
 
     if (user == null) {

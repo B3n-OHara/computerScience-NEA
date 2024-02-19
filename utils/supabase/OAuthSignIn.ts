@@ -3,10 +3,10 @@
 import { createClient } from "@/utils/supabase/server"
 import { cookies } from "next/headers"
 
-const cookieStore = cookies()
-const supabase = createClient(cookieStore)
-
 export async function SignInWithGithub() {
+    const cookieStore = cookies()
+    const supabase = await createClient(cookieStore)
+
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'github',
         options: {
@@ -16,6 +16,9 @@ export async function SignInWithGithub() {
 }
 
 export async function SignInWithGoogle() {
+    const cookieStore = cookies()
+    const supabase = await createClient(cookieStore)
+
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
