@@ -16,7 +16,7 @@ const config: Config = {
       fontFamily: {
         'titles': ['var(--font-rubik)'],
         'subheadings': ['var(--font-source-code-pro)'],
-        'text': ['var(--font-roboto-mono']
+        'text': ['var(--font-roboto-mono)']
       },
       colors: {
         'surface': '#121212',
