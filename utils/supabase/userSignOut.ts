@@ -14,7 +14,4 @@ export default async function signOut() {
         redirect('/')
     }
 
-    else {
-        redirect('/')
-    }
 }

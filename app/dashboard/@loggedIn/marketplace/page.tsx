@@ -1,44 +1,55 @@
-import { FetchContainers } from "@/utils/supabase/fetchContainers"
-import Image from "next/image";
-import React from "react"
+'use client'
+
+import { createClient } from "@/utils/supabase/client"
+import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from "react"
 
 export default function Marketplace() {
-    const containerArray = FetchContainers()
-    
-    interface Container {
-        container_id: string;
-        name: string;
-        base_os: string;
-        description: string;
-        icon_url: string;
-    }
+    const supabase = createClient()
 
-    interface Props {
-        containers: Container[];
-    }
+    const [fetchError, setFetchError] = useState<any>(null)
+    const [containers, setContainers] = useState<any>(null)
 
-    const ContainerList: React.FC<Props> = ({ containers }) => {
-        return (
-            <div>
-                {containers.map(container => (
-                    <div key={container.container_id} className="card w-96 bg-base-100 shadow-xl">
-                        <figure><Image src={container.icon_url} alt="container icon" width={500} height={500}/></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">{container.name}</h2>
-                            <p>{container.description}</p>
-                            <div className="card-actions justify-end">
-                                <div className="badge badge-outline">{container.base_os}</div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        )
-    }
+    useEffect(() => {
+        const fetchData = async () => {
+            const { data, error } = await supabase
+                .from('containers')
+                .select()
+
+            if (error) {
+                setFetchError('Unable to Fetch User preferences')
+                setContainers(null)
+                console.log(error)
+            }
+            if (data) {
+                setContainers(data)
+                setFetchError(null)
+            }
+        }
+
+        fetchData()
+    }, [supabase])
 
     return(
-        <div className="grid-cols-4">
-            <ContainerList containers={containerArray} />
+        <div>
+            {fetchError && (<p>{fetchError}</p>)}
+            {containers && (
+                <div className="grid-cols-4">
+                    {containers.map((containers: { container_id: Key | null | undefined; icon_url: string | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; description: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; base_os: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined }) => (
+                        <div key={containers.container_id} className="card w-96 bg-08dp shadow-xl">
+                            <figure><img src={containers.icon_url} alt="icon" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">
+                                    {containers.name}
+                                </h2>
+                                <p>{containers.description}</p>
+                                <div className="card-actions justify-end">
+                                    <div className="badge badge-outline">{containers.base_os}</div>
+                                </div>
+                            </div>
+                        </div>                
+                    ))}
+                </div>
+            )}
         </div>
     )
 }
