@@ -33,7 +33,7 @@ export default function Marketplace() {
         <div>
             {fetchError && (<p>{fetchError}</p>)}
             {containers && (
-                <div className="grid-cols-4">
+                <div className="grid grid-cols-4 gap-4">
                     {containers.map((containers: { container_id: Key | null | undefined; icon_url: string | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; description: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; base_os: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined }) => (
                         <div key={containers.container_id} className="card w-96 bg-08dp shadow-xl">
                             <figure><img src={containers.icon_url} alt="icon" /></figure>
