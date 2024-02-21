@@ -17,8 +17,7 @@ export default async function DashboardLayout({
         <section>
             <div className="drawer drawer-open">
                 <input id="drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
-                    
+                <div className="drawer-content flex flex-col">
                     {state ? loggedIn : guest}
                 </div>
 
