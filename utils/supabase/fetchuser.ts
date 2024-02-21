@@ -11,5 +11,7 @@ export async function fetchUser() {
 
     const user_id = user?.id
 
-    return user_id
+    return(
+        user_id
+    )
 }
