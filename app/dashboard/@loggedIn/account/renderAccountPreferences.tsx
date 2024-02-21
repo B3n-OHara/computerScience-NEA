@@ -38,7 +38,7 @@ export function RenderPreferences({
     }, [supabase, children])
 
     return(
-        <form className="flex flex-col gap-y-8 mx-8">
+        <form className="flex flex-col gap-y-8 m-8">
             <div>
                 {fetchError && (<p>{fetchError}</p>)}
                 {preferences && (
