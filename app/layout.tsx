@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubik.variable} ${sourceCodePro.variable} ${robotoMono.variable}`}>
-        <header>
+        <header className='sticky w-full'>
           <nav className='font-text w-full h-[75px] flex flex-row bg-16dp'>
             <ul className='flex flex-row justify-start items-center basis-1/6'>
               <li className='pl-8'>
