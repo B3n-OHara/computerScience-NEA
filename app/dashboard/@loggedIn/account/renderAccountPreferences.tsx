@@ -50,8 +50,7 @@ export function RenderPreferences({
                                     <div className="label">
                                         <span className="label-text">Update Your Proficiency Level: </span>
                                     </div>
-                                    <select id="level" name="level" className="select select-bordered">
-                                        <option disabled selected>Current Value: {preferences.level}</option>
+                                    <select id="level" name="level" defaultValue={preferences.level} className="select select-bordered">
                                         <option value={'Beginner'}>Beginner</option>
                                         <option value={'Intermediate'}>Intermediate</option>
                                         <option value={'Expert'}>Expert</option>
@@ -59,10 +58,26 @@ export function RenderPreferences({
                                 </div>
                                 <div>
                                     <div className="label">
+                                        <span className="label-text">Update Your Primary Use Case: </span>
+                                    </div>
+                                    <select id="use_case" name="use_case" defaultValue={preferences.use_case} className="select select-bordered">
+                                        <option value={'DevOps'}>DevOps</option>
+                                        <option value={'Deployment'}>Deployment</option>
+                                        <option value={'Microservices Architecture'}>Microservices Architecture</option>
+                                        <option value={'CI/CD'}>CI/CD</option>
+                                        <option value={'Infrastructure'}>Infrastructure</option>
+                                        <option value={'Scalability'}>Scalability</option>
+                                        <option value={'Efficiency'}>Efficiency</option>
+                                        <option value={'Portability'}>Portability</option>
+                                        <option value={'Security'}>Security</option>
+                                        <option value={'Testing'}>Testing</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <div className="label">
                                         <span className="label-text">Update Your First Interest: </span>
                                     </div>
-                                    <select id="interest1" name="interest1" className="select select-bordered">
-                                        <option disabled selected>Current Value: {preferences.interest1}</option>
+                                    <select id="interest1" name="interest1" defaultValue={preferences.interest1} className="select select-bordered">
                                         <option value={'DevOps'}>DevOps</option>
                                         <option value={'Deployment'}>Deployment</option>
                                         <option value={'Microservices Architecture'}>Microservices Architecture</option>
@@ -79,8 +94,7 @@ export function RenderPreferences({
                                     <div className="label">
                                         <span className="label-text">Update Your Second Interest: </span>
                                     </div>
-                                    <select id="interest2" name="interest2" className="select select-bordered">
-                                        <option disabled selected>Current Value: {preferences.interest2}</option>
+                                    <select id="interest2" name="interest2" defaultValue={preferences.interest2} className="select select-bordered">
                                         <option value={'DevOps'}>DevOps</option>
                                         <option value={'Deployment'}>Deployment</option>
                                         <option value={'Microservices Architecture'}>Microservices Architecture</option>
@@ -97,8 +111,7 @@ export function RenderPreferences({
                                     <div className="label">
                                         <span className="label-text">Update Your Third Interest: </span>
                                     </div>
-                                    <select id="interest3" name="interest3" className="select select-bordered">
-                                        <option disabled selected>Current Value: {preferences.interest3}</option>
+                                    <select id="interest3" name="interest3" defaultValue={preferences.interest3} className="select select-bordered">
                                         <option value={'DevOps'}>DevOps</option>
                                         <option value={'Deployment'}>Deployment</option>
                                         <option value={'Microservices Architecture'}>Microservices Architecture</option>
@@ -111,24 +124,7 @@ export function RenderPreferences({
                                         <option value={'Testing'}>Testing</option>
                                     </select>
                                 </div>
-                                <div>
-                                    <div className="label">
-                                        <span className="label-text">Update Your Primary Use Case: </span>
-                                    </div>
-                                    <select id="use_case" name="use_case" className="select select-bordered">
-                                        <option disabled selected>Current Value: {preferences.use_case}</option>
-                                        <option value={'DevOps'}>DevOps</option>
-                                        <option value={'Deployment'}>Deployment</option>
-                                        <option value={'Microservices Architecture'}>Microservices Architecture</option>
-                                        <option value={'CI/CD'}>CI/CD</option>
-                                        <option value={'Infrastructure'}>Infrastructure</option>
-                                        <option value={'Scalability'}>Scalability</option>
-                                        <option value={'Efficiency'}>Efficiency</option>
-                                        <option value={'Portability'}>Portability</option>
-                                        <option value={'Security'}>Security</option>
-                                        <option value={'Testing'}>Testing</option>
-                                    </select>
-                                </div>
+                                
                                 <button className="btn btn-lg btn-primary" formAction={SubmitPreferences}>Update Preferences</button>
                             </div>
                             

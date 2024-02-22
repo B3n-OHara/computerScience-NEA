@@ -32,7 +32,7 @@ export async function SubmitContactForm(formData:FormData) {
             .insert({ message_type: (messageType), message: (message), guest: (false), user_id: (userID) })
 
         if (error) {
-            redirect('./error')
+            redirect('/error')
         }    
     }
 
