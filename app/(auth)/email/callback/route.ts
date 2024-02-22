@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
   redirectTo.searchParams.delete('type')
 
   if (token_hash && type) {
-    const supabase = await createClient(cookieStore)
+    const supabase = await createClient()
 
     const { error } = await supabase.auth.verifyOtp({
       type,

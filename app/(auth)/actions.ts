@@ -8,7 +8,7 @@ import { createClient } from '@/utils/supabase/server'
 
 export async function login(formData: FormData) {
   const cookieStore = cookies()
-  const supabase = await createClient(cookieStore)
+  const supabase = await createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -29,7 +29,7 @@ export async function login(formData: FormData) {
 
 export async function signup(formData: FormData) {
   const cookieStore = cookies()
-  const supabase = await createClient(cookieStore)
+  const supabase = await createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs

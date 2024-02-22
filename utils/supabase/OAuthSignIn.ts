@@ -5,24 +5,24 @@ import { cookies } from "next/headers"
 
 export async function SignInWithGithub() {
     const cookieStore = cookies()
-    const supabase = await createClient(cookieStore)
+    const supabase = await createClient()
 
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'github',
         options: {
-            redirectTo: `http://localhost:3000/OAuth/callback`
-        }
+            redirectTo: `http://localhost:3000/OAuth/callback`,
+        },
     })
 }
 
 export async function SignInWithGoogle() {
     const cookieStore = cookies()
-    const supabase = await createClient(cookieStore)
+    const supabase = await createClient()
 
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            redirectTo: `http://localhost:3000/OAuth/callback`
-        }
+            redirectTo: `http://localhost:3000/OAuth/callback`,
+        },
     })
 }

@@ -8,7 +8,7 @@ import { createClient } from '@/utils/supabase/server'
 
 export async function SubmitPreferences(formData: FormData) {
     const cookieStore = cookies()
-    const supabase = await createClient(cookieStore)
+    const supabase = await createClient()
 
     const level = formData.get('level') as string
     const use_case = formData.get('use_case') as string

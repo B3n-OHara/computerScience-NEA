@@ -6,7 +6,7 @@ import { createClient } from "@/utils/supabase/server"
 
 export async function RequestPwdReset(formData: FormData) {
     const cookieStore = cookies()
-    const supabase = await createClient(cookieStore)
+    const supabase = await createClient()
 
     
     const email = formData.get('email') as string
@@ -18,7 +18,7 @@ export async function RequestPwdReset(formData: FormData) {
 
 export async function UpdateUserPwd(formData: FormData) {
     const cookieStore = cookies()
-    const supabase = await createClient(cookieStore)
+    const supabase = await createClient()
 
     const password = formData.get('pwd') as string
 

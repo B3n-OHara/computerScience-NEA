@@ -1,6 +1,6 @@
 import Link from "next/link"
 import CheckUserLoggedIn from "@/utils/supabase/checkUserLoggedIn"
-import signOut from "@/utils/supabase/userSignOut"
+import React from "react"
 
 export default async function DashboardLayout({
     guest,
@@ -21,15 +21,16 @@ export default async function DashboardLayout({
                     {state ? loggedIn : guest}
                 </div>
 
-                <div className="drawer-side">
+                <div className="drawer-side font-text">
                     <label htmlFor="drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-60 min-h-full bg-24dp text-base-content items-center">
-                        <li className="basis-1/6"><Link href={"/dashboard/workspace"}>Workspace</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/6"><Link href={"/dashboard/userContainers"}>Your Containers</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/6"><Link href={"/dashboard/demos"}>Demos</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/6"><Link href={"/dashboard/marketplace"}>Container Marketplace</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/6"><Link href={"/docs"}>How-To Guides</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/6"><Link href={"/dashboard/account"}>Account Settings</Link></li>
+                    <ul className="menu p-4 w-62 min-h-full bg-24dp text-base-content items-center">
+                        <li className="basis-1/7"><Link href={"/dashboard/workspace"}>Workspace</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/7"><Link href={"/dashboard/userContainers"}>Your Containers</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/7"><Link href={"/dashboard/demos"}>Demos</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/7"><Link href={"/dashboard/marketplace"}>Container Marketplace</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/7"><Link href={"/docs"}>How-To Guides</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/7"><Link href={"/dashboard/account"}>Account Settings</Link><div className="divider divider-primary"></div></li>
+                        <li className="basis-1/7"><button className="btn btn-primary btn-sm"><Link href={'/dashboard/account/logout'}>Sign Out</Link></button></li>
                     </ul>
                 </div>
             </div>
