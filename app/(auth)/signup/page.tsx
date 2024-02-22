@@ -36,14 +36,14 @@ export default async function SignUpPage() {
 
                 <div className='flex flex-initial gap-x-3'>
                     <div>
-                        <button className='btn btn-lg btn-disabled' onClick={SignInWithGithub}>
+                        <button className='btn btn-lg' onClick={SignInWithGithub}>
                             Start With Github
                             <Image src={githubIcon} width={60} height={60} alt='Github Icon'/>
                         </button>
                     </div>
                     
                     <div>
-                        <button className='btn btn-lg btn-disabled' onClick={SignInWithGoogle}>
+                        <button className='btn btn-lg' onClick={SignInWithGoogle}>
                             Start With Google
                             <Image src={googleIcon} width={60} height={60} alt='Google Icon'/>
                         </button>
