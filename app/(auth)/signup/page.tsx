@@ -5,8 +5,29 @@ import Link from 'next/link'
 import Image from 'next/image'
 import githubIcon from '@/public/mdi--github.svg'
 import googleIcon from '@/public/devicon--google.svg'
+import { createClient } from '@/utils/supabase/client'
 
-export default async function SignUpPage() {
+export default function SignUpPage() {
+    const supabase = createClient()
+    
+    const handleOAuthGithub = async () => {
+        await supabase.auth.signInWithOAuth({
+            provider: 'github',
+            options: {
+                redirectTo: `http://localhost:3000/OAuth/callback`,
+            },
+        })
+    }
+    
+    const handleOAuthGoogle = async () => {
+        await supabase.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+                redirectTo: `http://localhost:3000/OAuth/callback`,
+            },
+        })
+    }
+
     return (
         <div>
             <form className='font-text flex flex-col justify-evenly items-center absolute w-1/3 min-w-64 flex-initial h-3/4 left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>
@@ -35,14 +56,14 @@ export default async function SignUpPage() {
 
                 <div className='flex flex-initial gap-x-3'>
                     <div>
-                        <button className='btn btn-lg'>
+                        <button className='btn btn-lg' onClick={handleOAuthGithub}>
                             Start With Github
                             <Image src={githubIcon} width={60} height={60} alt='Github Icon'/>
                         </button>
                     </div>
                     
                     <div>
-                        <button className='btn btn-lg'>
+                        <button className='btn btn-lg' onClick={handleOAuthGoogle}>
                             Start With Google
                             <Image src={googleIcon} width={60} height={60} alt='Google Icon'/>
                         </button>

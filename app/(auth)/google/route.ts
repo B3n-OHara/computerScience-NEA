@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from "@/utils/supabase/server"
+import { redirect } from "next/navigation"
 import { NextRequest } from "next/server"
 
 export async function GET(request:NextRequest) {
@@ -11,5 +12,10 @@ export async function GET(request:NextRequest) {
         options: {
             redirectTo: `http://localhost:3000/OAuth/callback`,
         },
-    }) 
+    })
+
+    if (error) {
+        redirect('/error')
+    }
+
 }
