@@ -1,7 +1,6 @@
 'use server'
 
 import { login } from '../actions'
-import { SignInWithGithub, SignInWithGoogle } from '@/utils/supabase/OAuthSignIn'
 import Link from 'next/link'
 import Image from 'next/image'
 import githubIcon from '@/public/mdi--github.svg'
@@ -36,15 +35,15 @@ export default async function LoginPage() {
 
                 <div className='flex flex-initial gap-x-3'>
                     <div>
-                        <button className='btn btn-lg' onClick={SignInWithGithub}>
-                            Login With Github
+                        <button className='btn btn-lg'>
+                            <Link href={'/github'}>Login With Github</Link>
                             <Image src={githubIcon} width={60} height={60} alt='Github Icon'/>
                         </button>
                     </div>
                     
                     <div>
-                        <button className='btn btn-lg' onClick={SignInWithGoogle}>
-                            Login With Google
+                        <button className='btn btn-lg'>
+                            <Link href={'/google'}></Link>
                             <Image src={googleIcon} width={60} height={60} alt='Google Icon'/>
                         </button>
                     </div>
