@@ -43,7 +43,7 @@ export default async function LoginPage() {
                     
                     <div>
                         <button className='btn btn-lg'>
-                            <Link href={'/google'}></Link>
+                            <Link href={'/google'}>Login With Google</Link>
                             <Image src={googleIcon} width={60} height={60} alt='Google Icon'/>
                         </button>
                     </div>
