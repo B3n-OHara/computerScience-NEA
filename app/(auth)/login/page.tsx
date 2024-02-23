@@ -1,4 +1,4 @@
-'use server'
+'use client'
 
 import { login } from '../actions'
 import Link from 'next/link'
@@ -7,7 +7,7 @@ import githubIcon from '@/public/mdi--github.svg'
 import googleIcon from '@/public/devicon--google.svg'
 import { createClient } from '@/utils/supabase/client'
 
-export default async function LoginPage() {
+export default function LoginPage() {
     const supabase = createClient()
     
     const handleOAuthGithub = async () => {
