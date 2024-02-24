@@ -36,7 +36,7 @@ export function RenderCategories() {
         <div>
             {fetchError && (<p>{fetchError}</p>)}
             {dataToRender && (
-                <div>
+                <div className="">
                     {dataToRender.map((dataToRender: { id: Key | null | undefined; category: string | null | undefined}) => (
                         <div key={dataToRender.id} className="collapse collapse-arrow">
                             <input type="checkbox" />
