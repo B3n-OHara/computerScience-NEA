@@ -45,7 +45,7 @@ export function RenderLinks({
             {dataToRender && (
                 <div>
                     {dataToRender.map((dataToRender: {id: Key | null | undefined; created_at: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; category: string | null | undefined; title: string | null | undefined; content: string | null | undefined; }) => (
-                        <Link key={dataToRender.id} href={`/${dataToRender.category}/${dataToRender.title}`}>{dataToRender.title}</Link>
+                        <Link key={dataToRender.id} href={`/docs/${dataToRender.category}/${dataToRender.title}`}>{dataToRender.title}</Link>
                     ))}
                 </div>
             )}
