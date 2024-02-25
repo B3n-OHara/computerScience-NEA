@@ -11,17 +11,17 @@ export async function generateStaticParams() {
         .from('docs')
         .select()
 
-    if (error) {
-        redirect('/error')
-    }
+        if (error) {
+            redirect('/error')
+        }
     
-    if (data) {
-        return data.map((doc) => ({
-            category: doc.category,
-            title: doc.title,
-        }))
+        if (data) {
+            return data.map((doc) => ({
+                category: doc.category,
+                title: doc.title,
+            }))
         
-    }
+        }
 }
 
 export default async function Page({
