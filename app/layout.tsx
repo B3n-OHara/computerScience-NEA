@@ -4,6 +4,9 @@ import { Rubik, Source_Code_Pro, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import Image from 'next/image';
 import profileIcon from '@/public/healthicons--ui-user-profile.svg'
+import CheckUserLoggedIn from '@/utils/supabase/checkUserLoggedIn'
+import { LoginIcon } from '@/components/loginIcon'
+import { LoginIconDisabled } from '@/components/loginIconDisabled'
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -32,11 +35,13 @@ export const metadata: Metadata = {
   description: 'The Teaching & Learning Platform For Containerisation',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const loggedIn = await CheckUserLoggedIn()
+  
   return (
     <html lang="en">
       <body className={`${rubik.variable} ${sourceCodePro.variable} ${robotoMono.variable}`}>
@@ -64,15 +69,7 @@ export default function RootLayout({
                 <Link href="/dashboard">Dashboard</Link>
               </li>
               <li>
-                <Link href={"/login"}>
-                  <Image 
-                    src={profileIcon}
-                    priority={true}
-                    width={64}
-                    height={64}
-                    alt='Profile Icon'
-                  />
-                </Link>
+                {loggedIn ? LoginIcon() : LoginIconDisabled()}
               </li>
             </ul>
           </nav>
