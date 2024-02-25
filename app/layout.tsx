@@ -69,7 +69,7 @@ export default async function RootLayout({
                 <Link href="/dashboard">Dashboard</Link>
               </li>
               <li>
-                {loggedIn ? LoginIcon() : LoginIconDisabled()}
+                {loggedIn ? LoginIconDisabled() : LoginIcon()}
               </li>
             </ul>
           </nav>
