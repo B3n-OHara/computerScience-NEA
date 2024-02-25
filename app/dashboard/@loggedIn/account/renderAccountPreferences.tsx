@@ -44,7 +44,7 @@ export function RenderPreferences({
                 {fetchError && (<p>{fetchError}</p>)}
                 {preferences && (
                     <div>
-                        {preferences.map((preferences: { user_id: Key | null | undefined; level: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; interest1: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; interest2: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; interest3: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; use_case: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined }) => (
+                        {preferences.map((preferences: { user_id: Key | null | undefined; level: string | number | boolean | null | undefined; interest1: string | number | boolean | null | undefined; interest2: string | number | boolean | null | undefined; interest3: string | number | boolean | null | undefined; use_case: string | number | boolean | null | undefined }) => (
                             <div key={preferences.user_id} className="form-control w-1/3 gap-y-6">
                                 <div>
                                     <div className="label">
