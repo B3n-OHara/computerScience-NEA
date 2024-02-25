@@ -17,11 +17,8 @@ export async function generateStaticParams() {
     
     if (data) {
         return data.map((doc) => ({
-            id: doc.id,
-            created_at: doc.created_at,
             category: doc.section,
             title: doc.title,
-            content: doc.content,
         }))
     }
 }
@@ -32,6 +29,7 @@ export default function Page({
     params: { category: string; title: string }
 }) {
 
+    const { category, title } = params
 
     return(
         <div>
