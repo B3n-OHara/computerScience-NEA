@@ -27,14 +27,14 @@ export async function generateStaticParams() {
 export default async function Page({
     params,
 } : {
-    params: { category: string; title: string }
+    params?: { category: string; title: string }
 }) {
 
 
     return(
         <div>
             <RenderDocPage>
-                {params.title}
+                {params?.title}
             </RenderDocPage>
         </div>
     )
