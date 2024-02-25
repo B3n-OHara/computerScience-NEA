@@ -17,7 +17,7 @@ export async function generateStaticParams() {
     
     if (data) {
         return data.map((doc) => ({
-            category: doc.section.slug,
+            category: doc.category,
             title: doc.title,
         }))
         
