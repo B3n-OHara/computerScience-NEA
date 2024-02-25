@@ -24,7 +24,7 @@ export async function generateStaticParams() {
         }
 }
 
-export default function Page({
+export default async function Page({
     params,
 } : {
     params: { category: string; title: string }
