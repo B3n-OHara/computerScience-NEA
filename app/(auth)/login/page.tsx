@@ -14,7 +14,7 @@ export default function LoginPage() {
         await supabase.auth.signInWithOAuth({
             provider: 'github',
             options: {
-                redirectTo: `http://localhost:3000/OAuth/callback`,
+                redirectTo: `https://containeriseit.dev/OAuth/callback`,
             },
         })
     }
@@ -23,7 +23,7 @@ export default function LoginPage() {
         await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: `http://localhost:3000/OAuth/callback`,
+                redirectTo: `https://containeriseit.dev/OAuth/callback`,
             },
         })
     }
