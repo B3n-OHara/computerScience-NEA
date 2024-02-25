@@ -40,16 +40,16 @@ export function RenderLinks({
     }, [supabase, children])
 
     return(
-        <li>
+        <ul>
             {fetchError && (<p>{fetchError}</p>)}
             {dataToRender && (
-                <div>
+                <li className="flex flex-col">
                     {dataToRender.map((dataToRender: {id: Key | null | undefined; created_at: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; category: string | null | undefined; title: string | null | undefined; content: string | null | undefined; }) => (
                         <Link key={dataToRender.id} href={`/docs/${dataToRender.category}/${dataToRender.title}`}>{dataToRender.title}</Link>
                     ))}
-                </div>
+                </li>
             )}
-        </li>
+        </ul>
     )
 
 }

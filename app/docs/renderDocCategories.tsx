@@ -44,11 +44,9 @@ export function RenderCategories() {
                                 {dataToRender.category}
                             </div>
                             <div className="collapse-content">
-                                <ul>
-                                    <RenderLinks>
-                                        {dataToRender.category}
-                                    </RenderLinks>
-                                </ul>
+                                <RenderLinks>
+                                    {dataToRender.category}
+                                </RenderLinks>
                             </div>
                         </div>
                     ))}
