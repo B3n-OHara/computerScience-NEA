@@ -16,26 +16,25 @@ export async function generateStaticParams() {
     }
     
     if (data) {
-        return data.map((doc) => ([{
+        return data.map((doc) => ({
             category: doc.section,
             title: doc.title,
-        }]))
+        }))
         
     }
 }
 
-export default function Page({
+export default async function Page({
     params,
 } : {
-    params: { category: string; title: string }
+    params?: { category: string; title: string }
 }) {
 
-    const { category, title } = params
 
     return(
         <div>
             <RenderDocPage>
-                {params.title}
+                {params?.title}
             </RenderDocPage>
         </div>
     )
