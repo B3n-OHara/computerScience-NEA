@@ -16,12 +16,11 @@ export async function generateStaticParams() {
     }
     
     if (data) {
-        return [
-            data.map((doc) => ({
-                category: doc.section,
-                title: doc.title,
-            }))
-        ]
+        return data.map((doc) => ([{
+            category: doc.section,
+            title: doc.title,
+        }]))
+        
     }
 }
 
