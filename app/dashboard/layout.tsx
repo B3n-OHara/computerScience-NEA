@@ -1,6 +1,7 @@
 import Link from "next/link"
 import CheckUserLoggedIn from "@/utils/supabase/checkUserLoggedIn"
 import React from "react"
+import { signOutButton } from "@/components/signOutButton"
 
 export default async function DashboardLayout({
     guest,
@@ -30,7 +31,7 @@ export default async function DashboardLayout({
                         <li className="basis-1/7"><Link href={"/dashboard/marketplace"}>Container Marketplace</Link><div className="divider divider-primary"></div></li>
                         <li className="basis-1/7"><Link href={"/docs"}>How-To Guides</Link><div className="divider divider-primary"></div></li>
                         <li className="basis-1/7"><Link href={"/dashboard/account"}>Account Settings</Link><div className="divider divider-primary"></div></li>
-                        <li className="basis-1/7"><button className="btn btn-primary btn-sm"><Link href={'/dashboard/account/logout'}>Sign Out</Link></button></li>
+                        {state ? signOutButton() : null}
                     </ul>
                 </div>
             </div>
