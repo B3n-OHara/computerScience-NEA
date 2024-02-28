@@ -7,9 +7,11 @@ import githubIcon from '@/public/mdi--github.svg'
 import googleIcon from '@/public/devicon--google.svg'
 import { createClient } from '@/utils/supabase/client'
 
+//render user sign up page
 export default function SignUpPage() {
     const supabase = createClient()
     
+    //async function to handle sign up with Github - same functionality as in login page
     const handleOAuthGithub = async () => {
         await supabase.auth.signInWithOAuth({
             provider: 'github',
@@ -19,6 +21,7 @@ export default function SignUpPage() {
         })
     }
     
+    //async function to handle sign up with Google - same functionality as in login page
     const handleOAuthGoogle = async () => {
         await supabase.auth.signInWithOAuth({
             provider: 'google',
@@ -28,6 +31,9 @@ export default function SignUpPage() {
         })
     }
 
+    //render a sign up form
+    //users can choose from conventional methods + OAuth
+    //calls handler functions when necessary
     return (
         <div>
             <div className='hero min-h-screen bg-surface'>

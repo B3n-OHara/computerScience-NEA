@@ -7,10 +7,15 @@ import githubIcon from '@/public/mdi--github.svg'
 import googleIcon from '@/public/devicon--google.svg'
 import { createClient } from '@/utils/supabase/client'
 
+//render the login page
 export default function LoginPage() {
+    //create supabase client client
     const supabase = createClient()
     
+    //async function to handle login via GitHub
     const handleOAuthGithub = async () => {
+        //sign in the user with OAuth method
+        //direct user to GitHub's auth flow
         await supabase.auth.signInWithOAuth({
             provider: 'github',
             options: {
@@ -19,7 +24,10 @@ export default function LoginPage() {
         })
     }
     
+    //async function to handle login via Google
     const handleOAuthGoogle = async () => {
+        //sign in the user with OAuth method
+        //direct user to Google's auth flow
         await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
@@ -28,6 +36,8 @@ export default function LoginPage() {
         })
     }
 
+    //render login form
+    //call relevant login functions when necessary
     return (
         <div>
             <form className='font-text flex flex-col justify-evenly items-center absolute w-1/3 min-w-64 flex-initial h-3/4 left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>

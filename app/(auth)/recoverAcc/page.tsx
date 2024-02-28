@@ -2,7 +2,9 @@
 
 import { RequestPwdReset } from "@/utils/supabase/pwdReset"
 
+//render account recovery page
 export default async function RecoverAcc() {
+    //return form allowing user to input their email and request a password reset for the corresponding account
     return (
         <div>
             <form>
