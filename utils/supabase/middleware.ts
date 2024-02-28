@@ -1,7 +1,7 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-//updates website session based on current route, ensures users are persistent between redirects & refreshes
+//updates or refreshes user session based on current route, ensures users are persistent between redirects & refreshes
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({
     request: {

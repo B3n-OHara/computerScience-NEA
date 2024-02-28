@@ -1,3 +1,4 @@
+//render default logged in dashboard page
 export default function UserDashboard() {
     return(
         <div>

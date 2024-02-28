@@ -2,11 +2,13 @@ import Link from "next/link"
 import { RenderCategories } from "./renderDocCategories"
 import React from "react"
 
+//layout for documentation facilitating more content to render inside
 export default function layout({
     children,
 }: {
     children: React.ReactNode
 }) {
+    //render docs navigation menu
     return(
         <section>
             <div className="drawer drawer-open">

@@ -1,3 +1,4 @@
+//render docs landing page
 export default function Docs() {
     return(
         <div className="flex flex-col items-center m-auto">

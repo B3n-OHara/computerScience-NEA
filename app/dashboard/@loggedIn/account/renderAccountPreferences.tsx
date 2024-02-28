@@ -4,40 +4,58 @@ import { createClient } from "@/utils/supabase/client"
 import React, { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from "react"
 import { SubmitPreferences } from "./actions"
 
+//function to render a user's preferences with the option to update them inside a form
+//using children to get data passed to the function
 export function RenderPreferences({
     children,
 }: {
     children: React.ReactNode
 }) {
 
+    //create supabase client client
     const supabase = createClient()
 
+    //useState() dynamically sets value of variables
     const [fetchError, setFetchError] = useState<any>(null)
     const [preferences, setPreferences] = useState<any>(null)
 
+    //useEffect() fires the function it wraps once at render
     useEffect(() => {
+        //data passed to parent function should be the user's id
         const user_id = children
 
+        //function to fetch the specific user's preferences
         const fetchData = async () => {
             const { data, error } = await supabase
                 .from('user_preferences')
                 .select()
                 .eq('user_id', user_id)
 
+                //error when fetching
                 if (error) {
+                    //error so set error code
                     setFetchError('Unable to Fetch User preferences')
+                    //no data so set preferences null
                     setPreferences(null)
                     console.log(error)
                 }
+                
+                //fetching successful
                 if (data) {
+                    //fetched data so set preferences
                     setPreferences(data)
+                    //no error so set error code to null
                     setFetchError(null)
                 }
         }
 
+        //calls function
         fetchData()
     }, [supabase, children])
 
+    //conditionally render error message or user preferences
+    //render preferences inside of a form that allows updating
+    //mapping each attribute to the correct user
     return(
         <form className="flex flex-col gap-y-8 m-8 font-text">
             <div>

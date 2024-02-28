@@ -1,6 +1,8 @@
 import { SubmitContactForm } from "./actions"
 
+//render contact page
 export default async function Contact() {
+    //render contact form
     return(
         <div>
             <form className='flex flex-col justify-around items-center absolute w-1/3 min-w-64 flex-wrap flex-initial h-[640px] left-1/3 top-[140px] bg-01dp shadow-[[0px_16px_6px_rgba(244,144,29,0.03)], [0px_9px_5px_rgba(244,144,29,0.1)], [0px_4px_4px_rgba(244,144,29,0.17)], [0px_1px_2px_rgba(244,144,29,0.2)]] rounded-[20px]'>

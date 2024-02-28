@@ -3,32 +3,47 @@
 import { createClient } from "@/utils/supabase/client"
 import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from "react"
 
+//function to dynamically render each available container from supabase database
 export default function Marketplace() {
+    //create supabase client client
     const supabase = createClient()
 
+    //useState() dynamically sets values
     const [fetchError, setFetchError] = useState<any>(null)
     const [containers, setContainers] = useState<any>(null)
 
+    //useEffect() fires function once at render
     useEffect(() => {
+        //async function to fetch every container in the table
         const fetchData = async () => {
             const { data, error } = await supabase
                 .from('containers')
                 .select()
 
+            //error when fetching
             if (error) {
+                //error so set error message
                 setFetchError('Unable to Fetch Containers')
+                //no data so set containers null
                 setContainers(null)
                 console.log(error)
             }
+
+            //fetch successful
             if (data) {
+                //data returned so set containers array
                 setContainers(data)
+                //no error so set error message null
                 setFetchError(null)
             }
         }
 
+        //calls function
         fetchData()
     }, [supabase])
 
+    //conditionally render error message or containers
+    //map attributes of each container to unique object and render them all in a grid
     return(
         <div>
             {fetchError && (<p>{fetchError}</p>)}

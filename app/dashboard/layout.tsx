@@ -3,6 +3,8 @@ import CheckUserLoggedIn from "@/utils/supabase/checkUserLoggedIn"
 import React from "react"
 import { signOutButton } from "@/components/signOutButton"
 
+//layout function to render dashboard navigation menu
+//takes in both guest and logged in parallel routes
 export default async function DashboardLayout({
     guest,
     loggedIn,
@@ -10,10 +12,12 @@ export default async function DashboardLayout({
     guest: React.ReactNode
     loggedIn: React.ReactNode
 }) {
-
+    //checks if a user is logged in and sets according boolean
     const state = await CheckUserLoggedIn()
 
-    
+    //conditionally render either guest or logged in views
+    //pages open inside of menu layout
+    //render navigation links as a side menu
     return(
         <section>
             <div className="drawer drawer-open">
