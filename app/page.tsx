@@ -53,7 +53,7 @@ export default function Home() {
                 <div className="col-start-3 col-span-2 row-start-5 card glass">
                     <div className="m-2">
                         <p>
-                            The Community is a major part of software engineering, and it's guaranteed that if you have are stuck or have a question about something - someone else will too. 
+                            The Community is a major part of software engineering, and it's guaranteed that if you are stuck or have a question about something - someone else will too. 
                             That's why there's a <Link href={"./community"} className="link text-primary" >Community</Link> hub. 
                             Where you can host discussions, or post blog-like pages (written in markdown) to share your own thoughts on a topic, or to provide guides to others, or even to just share your own achievements.
                         </p>
